@@ -12,9 +12,10 @@ export class UsersRepository {
     return this.prisma.user.findMany();
   }
 
-  async findOne(id: number) {
+  async findOne(id: string) {
     return this.prisma.user.findUnique({
       where: { id },
+      include: { contacts: true },
     });
   }
 
@@ -24,14 +25,14 @@ export class UsersRepository {
     });
   }
 
-  async update(id: number, data: Partial<UpdateUserDto>) {
+  async update(id: string, data: Partial<UpdateUserDto>) {
     return this.prisma.user.update({
       where: { id },
       data,
     });
   }
 
-  async delete(id: number) {
+  async delete(id: string) {
     return this.prisma.user.delete({
       where: { id },
     });

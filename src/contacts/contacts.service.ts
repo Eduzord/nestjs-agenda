@@ -15,15 +15,15 @@ export class ContactsService {
     return this.contactsRepository.findAll();
   }
 
-  findOne(id: number) {
+  findOne(id: string) {
     return this.contactsRepository.findOne(id)  ;
   }
 
-  update(id: number, updateContactDto: UpdateContactDto) {
+  update(id: string, updateContactDto: UpdateContactDto) {
     return this.contactsRepository.update(id, updateContactDto);
   }
 
-  remove(id: number) {
+  remove(id: string) {
     return this.contactsRepository.delete(id);
   }
 }

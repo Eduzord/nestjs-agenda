@@ -11,7 +11,7 @@ export class ContactsRepository {
         return this.prisma.contact.findMany();
     }
 
-    async findOne(id: number) {
+    async findOne(id: string) {
         return this.prisma.contact.findUnique({
             where: { id },
         });
@@ -23,14 +23,14 @@ export class ContactsRepository {
         });
     }
 
-    async update(id: number, data: Partial<UpdateContactDto>) {
+    async update(id: string, data: Partial<UpdateContactDto>) {
         return this.prisma.contact.update({
             where: { id },
             data,
         });
     }
 
-    async delete(id: number) {
+    async delete(id: string) {
         return this.prisma.contact.delete({
             where: { id },
         });

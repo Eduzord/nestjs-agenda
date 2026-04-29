@@ -3,8 +3,6 @@ import { CreateContactDto } from './create-contact.dto';
 import { IsOptional, IsString } from 'class-validator';
 
 export class UpdateContactDto extends PartialType(CreateContactDto) {
-    @IsOptional()
-    @IsString({message : 'O nome deve ser uma string'})
 
     @IsOptional()
     @IsString({message : 'O email deve ser uma string'})
