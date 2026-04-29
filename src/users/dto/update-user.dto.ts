@@ -1,6 +1,6 @@
 import { PartialType } from '@nestjs/mapped-types';
 import { CreateUserDto } from './create-user.dto';
-import { IsString } from 'class-validator/types/decorator/typechecker/IsString';
+import { IsString, IsOptional } from 'class-validator';
 
 export class UpdateUserDto extends PartialType(CreateUserDto) {
     @IsString({message : 'O nome deve ser uma string'})
